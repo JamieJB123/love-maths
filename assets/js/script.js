@@ -84,16 +84,14 @@ function calculateCorrectAnswer() {
 }
 /**Gets current score from DOM and increments by 1 */
 function incrementScore() {
-    let score = parseInt(document.getElementById("score").innerText);
-    score++;
-    document.getElementById("score").innerText = score;
+    let oldScore = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++oldScore;
 }
 
 /**Gets current incorrect score from DOM and increments by 1 */
 function incrementWrongAnswer() {
-    let incorrect = parseInt(document.getElementById("incorrect").innerText);
-    incorrect++;
-    document.getElementById("incorrect").innerText = incorrect;
+    let oldScore = parseInt(document.getElementById("incorrect").innerText);
+    document.getElementById("incorrect").innerText = ++oldScore;
 
 }
 
