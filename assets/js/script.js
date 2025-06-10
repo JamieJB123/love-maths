@@ -51,15 +51,18 @@ function checkAnswer() {
     // Have to use 'value' as it is an input element (therefore cannot use inner text)
     let userAnswer = parseInt(document.getElementById("answer-box").value);
     let calculatedAnswer = calculateCorrectAnswer();
-    if (userAnswer === calculatedAnswer[0]) {
-        alert(`Well done! ${calculatedAnswer[0]} is correct!`)
-        incrementScore();
+    let isCorrect = userAnswer === calculatedAnswer[0];
+
+    if (isCorrect) {
+        alert("Hey! You got it right! :D");
     } else {
-        alert(`Awww... you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}!`)
-        incrementWrongAnswer();
+        alert(`Awwww.... you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}!`);
     }
+
     runGame(calculatedAnswer[1]);
+
 }
+
 
 /**
  * Gets operands and operator directly from the DOM, and returns correct number.
