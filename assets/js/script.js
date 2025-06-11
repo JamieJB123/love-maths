@@ -24,6 +24,12 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     }
 
+    document.getElementById("answer-box").addEventListener("keydown", function(e) {
+        if (e.key === "Enter") {
+            checkAnswer();
+        }
+    })
+
     // Inside DOM content loaded event listener as this will be the default game when page loads
     runGame("addition");
 })
@@ -32,7 +38,11 @@ document.addEventListener("DOMContentLoaded", function() {
  * The main game 'loop', called when the script is first loaded
 and after the user's answer has been processed */
 function runGame(gameType) {
-
+    
+    // Resets answer box
+    document.getElementById("answer-box").value = "";
+    // Focuses cursor on answer box
+    document.getElementById("answer-box").focus();
     // Creates two random numbers between 1 and 25
     let num1 = Math.floor(Math.random() * 25 + 1);
     let num2 = Math.floor(Math.random() * 25 + 1);
